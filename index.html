@@ -10,7 +10,7 @@
     <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script><!-- 引入jquery-->
 </head>
 <body>
-    <h2 style="margin-left:20%;margin-right:20%">全部文章</h2>
+    <!-- <h2 style="margin-left:20%;margin-right:20%">全部文章</h2> -->
 
     <!-- <div class="pulse-button" id="btn1"><div class="title-view">firstblog</div>
         <div class="container">
@@ -85,6 +85,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // 遍历数据并拼接HTML
             $.each(data, function(infoIndex, info) {
+                if (info["hide"] != 1){
                 let article_tags = info["tag"];
                 let tags_div_output = "";
                 if (article_tags !== null){ // 不为null才加载tag
@@ -97,6 +98,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     tags_div_output = `<div class="blog-tag-container" id="tag-container" style="margin-left: 0; margin-bottom: 10px; margin-top: 5px;">${tag_div}</div>`;                    
                 }
                 htmlContent += createCard(info["title"], info["publish"], info["update"], info["id"], tags_div_output);
+
+                }
             });
             
             // 一次性设置HTML

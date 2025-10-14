@@ -135,7 +135,16 @@ function codeBox() {
                     .replace(/>/g, '&gt;')
                     .replace(/"/g, '&quot;')
                     .replace(/'/g, '&#39;');
-                    
+                const highlightComments = (code) => {
+                    // 匹配注释
+                    if(token.lang=='python'){
+                    commentRegex = /(?<!#.*)(#.*$)|('''[\s\S]*?'''|"""[\s\S]*?""")/g;
+                    }else{
+                    commentRegex = /(\/\/[^\n]*|\/\*[\s\S]*?\*\/)/g;
+                    }
+                    // 将注释用span包裹并添加class
+                    return code.replace(commentRegex, '<span class="comment">$1</span>');
+                };
                 // 构建输出结构
                 return `
                 <div class="code-box">
@@ -144,13 +153,11 @@ function codeBox() {
                         <span class="code-title">${escape(token.title)}</span>
                         <span class="code-lang">${escape(token.lang)}</span>
                     </div>` : ''}
-                    <pre class="code-content">${escape(token.code)}</pre>
+                    <pre class="code-content">${highlightComments(escape(token.code))}</pre>
                 </div>
                 `.trim();
             }
         }]
     };
 }
-
 marked.use(codeBox());
-

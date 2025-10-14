@@ -1,21 +1,21 @@
 .blog-tag-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 5px;
     margin-left: 20%;
     margin-right: 20%;
     margin-top: 10px;
 }
 .article-tag {
-    padding: 10px 15px;
+    padding: 8px 12px;
     border-radius: 50px;
-    font-size: 15px;
+    font-size: 13px;
     font-weight: 500;
     transition: all 0.3s ease;
     cursor: pointer;
     border: none;
     outline: none;
-    background: #dddddd;
+    background: #e7e7e7;
     color: rgb(46, 46, 46);
 }
 .article-tag:hover {
@@ -23,7 +23,7 @@
     box-shadow: 0 10px 20px #00000027;
 }
 
-@media (max-width: 800px) {
+@media (width < 700px) {
     .blog-tag-container{
         margin-left: 10%;
     }

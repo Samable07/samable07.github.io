@@ -1,8 +1,36 @@
+/* 载入字体 */
+@font-face {
+    font-family: 'Consolas';
+    src: url('assets/fonts/Consolas/consola-1.ttf') format('truetype'),
+         url('assets/fonts/Consolas/Consolas.woff') format('woff'),
+         url('assets/fonts/Consolas/Consolas.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* 配色 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+:root {
+    --background-color: #ffffff;
+}
+
+[color-theme="dark"] {
+    --background-color: #131313e7;
+}
+
+/* 主要css */
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     margin: 0 auto;
-    background-color:#e6e6dce7;
+    background-color: var(--background-color);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -96,37 +124,12 @@ body {
     background-color: rgba(0, 0, 0, 0.1);
 }
 
-/* 移动端适配*/
-@media (max-width: 800px) {
-    .title-view{
-        font-size: 28px;
-    }
-    .blog-content{
-        font-size: large;
-        margin-left: 10%;
-        margin-right: 10%;
-    }
-    .btn-found-date-text{
-        font-size: 14px;
-    }
-    .pulse-button{
-        margin-left: 10%;
-        margin-right: 10%;
-    }
-    .back-btn{
-        margin-left: 5%;
-    }
-    .timecontainer{
-        font-size: large;
-        margin-left: 10%;
-        margin-right: 10%;
-    }
-}
+
 
 .pulse-button {
     border-radius: 10px;
     padding: 15px 30px;
-    background: #d8d8d82f;
+    background: #cacaca00;
     color: rgb(0, 0, 0);
     border: none;
     cursor: pointer;
@@ -140,7 +143,7 @@ body {
 }
 
 .pulse-button:hover {
-    background: #00000023;
+    background: #4e4e4e15;
     color: rgb(0, 0, 0);
 }
 
@@ -176,5 +179,32 @@ body {
         height: 300px;
         opacity: 0;
         transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+/* 移动端适配*/
+@media (width < 700px) {
+    .title-view{
+        font-size: 28px;
+    }
+    .blog-content{
+        font-size: large;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+    .btn-found-date-text{
+        font-size: 14px;
+    }
+    .pulse-button{
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    .back-btn{
+        margin-left: 5%;
+    }
+    .timecontainer{
+        font-size: large;
+        margin-left: 10%;
+        margin-right: 10%;
     }
 }

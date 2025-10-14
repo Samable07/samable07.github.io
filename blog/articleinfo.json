@@ -1,11 +1,19 @@
 [
-
+    {
+        "id":4,
+		"title": "C学习笔记_1",
+		"publish": "2025/9/21",
+        "update": "2025/9/22",
+        "tag": ["C_Lang"],
+        "hide": 1 
+    },
     {
         "id":3,
 		"title": "Github无法访问？",
 		"publish": "2025/7/17",
         "update": "2025/7/21",
-        "tag": null
+        "tag": null,
+        "hide": 1 
     },
     {
         "id": 2,
@@ -18,8 +26,8 @@
         "id": 1,
 		"title": "关于",
 		"publish": "2025/6/21",
-        "update": "2025/8/30",
-        "tag": ["公告","测试tag1","测试tag2","测试tag5"]
+        "update": "2025/10/14",
+        "tag": ["公告"]
 	},
     {
         "id": 0,
