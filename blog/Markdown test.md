@@ -20,7 +20,7 @@ print("Ciallo～") # 这是注释
 
 [[info|注：该样式仅适用于通过 Markdown 插入的图片]]
 
-![这是图片名称](https://tse3-mm.cn.bing.net/th/id/OIP-C.6OMmPBFYeF48y17ZK8JuYQAAAA?o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3))
+![这是图片名称](https://tse3-mm.cn.bing.net/th/id/OIP-C.6OMmPBFYeF48y17ZK8JuYQAAAA?o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3)
 
 > *嗯？不能横向滑动？把窗口缩小或者用手机看看呢？*
 
