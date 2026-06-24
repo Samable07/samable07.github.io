@@ -34,6 +34,7 @@ PORT = 8000 # 默认端口
 3. 在编辑器中直接运行 `htmlserver.py` 文件
 ]]
 
+
 ## 文章更新
 在 `\blog\articleinfo.json` 文件内使用以下格式设置文章信息：
 ```json [articleinfo.json 格式示例]
@@ -41,23 +42,24 @@ PORT = 8000 # 默认端口
     {
     "id": 0, // 文章唯一id
     "title": "文章标题", // 文章标题
+    "filename": "文件名", //文件名，不会显示出来，需要和./blog文件中的文件名对应
     "publish": "2000/1/1", // 文章初次发布日期
     "update": "2000/1/1", // 文章更新日期
-    "tag": ["tag1", "tag2"], // 文章标签
+    "tag": ["tag1", "tag2"], // 文章标签，没有标签可以填null
     "hide": 1 // 文章是否隐藏（若不隐藏可以忽略改键值对）
     }
 ]
 ```
 
-> 注：当没有文章标签时，使用 `null` 来表示
-
-在 `\blog` 文件夹内创建 `.md` 格式文件，使用 markdown 语法编辑文章。关于部分 markdown 语法或样式请参照站内[Markdown样式测试](https://samable07.github.io/blog/article?blog=0)文章。
+在 `\blog` 文件夹内创建 `.md` 格式文件，使用 markdown 语法编辑文章。关于部分 markdown 语法或样式请参照网页内[Markdown样式测试](https://samable07.github.io/blog/article?blog=0)文章。
 
 ## 局域网跨设备查看
 1. 电脑打开 cmd 后，输入 `ipconfig` 查询当前设备ip地址
 2. 查询你的 *IPv4 地址*（示例地址： `127.0.0.1`） ，然后在另一设备浏览器中访问 *IPv4 地址*`:`*端口*（示例`127.0.0.1:8000`）
 
 # 更新日志
+- 2026/6/24
+突然想起来这个博客了，修一下问题。
 - 2025/6/21 
 完成主页的基本框架；优化了移动设备上的显示。
 - 2025/6/22

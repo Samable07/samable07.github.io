@@ -84,15 +84,16 @@ function image() {
                 }
             },
             renderer(token) {
-                // 自定义图片结构（带滚动容器）
                 return `
-                    <div class="img-scroll-container" style="overflow-x: auto;">
-                        <img src="${token.href}" alt="${token.alt}" 
-                            style="display: block; min-width: min-content; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);"
-                            ${token.title ? `title="${token.title}"` : ''}
-                            loading="lazy">
+                    <div style="display: flex; justify-content: center; width: 100%;">
+                        <div class="img-scroll-container" style="overflow-x: auto; max-width: 100%;">
+                            <img src="${token.href}" alt="${token.alt}" 
+                                style="display: block; max-width: 100%; height: auto; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);"
+                                ${token.title ? `title="${token.title}"` : ''}
+                                loading="lazy">
+                        </div>
                     </div>
-                    <p style="text-align: center; color: #8b8b8bff;">${token.alt}</p>
+                    <p style="text-align: center; color: #8b8b8bff; margin-top: 8px;">${token.alt}</p>
                 `;
             }
         }]

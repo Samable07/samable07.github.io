@@ -1,22 +1,16 @@
 [
     {
-        "id":4,
-		"title": "自制Mod | Show NPCs Name",
+        "id":3,
+		"title": "自制Mod Show NPCs Name",
+        "filename": "Stardewvalley mod:Show NPCs Name",
 		"publish": "2025/12/28",
         "update": "2025/12/28",
-        "tag": ["星露谷物语","Mod"],
-    },
-    {
-        "id":3,
-		"title": "Github无法访问？",
-		"publish": "2025/7/17",
-        "update": "2025/7/21",
-        "tag": null,
-        "hide": 1 
+        "tag": ["星露谷物语","Mod"]
     },
     {
         "id": 2,
 		"title": "一些网站的分享",
+        "filename": "Websites recommandation",
 		"publish": "2025/6/21",
         "update": "2025/7/4",
         "tag": ["收藏"]
@@ -24,13 +18,15 @@
     {
         "id": 1,
 		"title": "关于",
+        "filename": "About the blog",
 		"publish": "2025/6/21",
-        "update": "2025/10/14",
+        "update": "2026/6/24",
         "tag": ["公告"]
 	},
     {
         "id": 0,
 		"title": "Markdown样式测试",
+        "filename": "Markdown test",
 		"publish": "null",
         "update": "null",
         "tag": null

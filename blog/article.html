@@ -30,7 +30,7 @@
     </div>
 
     <div id="tags"></div>
-    <div class=“blog-time” id="time"></div>
+    <div class="blog-time" id="time"></div>
     <div class="blog-content" id="content"></div>
 
     <script type="application/javascript">
@@ -54,7 +54,7 @@
     function fetchtitle() {
     return new Promise((resolve, reject) => {
         $.ajax({
-            url: "articleinfo.json",
+            url: "articleinfo.json",  // 保持原样，先不改
             type: "GET",
             dataType: "json",
             success: resolve,
@@ -71,32 +71,35 @@
             if (targetItem) {
                 console.log(targetItem.title);
                 let article_title = targetItem.title;
+                let article_filename = targetItem.filename;
                 let article_publish = targetItem.publish;
                 let article_update = targetItem.update;
                 let article_tags = targetItem.tag;
                 // 页面处理
                 document.title = "Samable的博客文章-" + article_title;
-                document.getElementById('page-title').innerHTML = article_title;
+                document.getElementById('page-title').innerHTML = article_title;  // 只改这里
                 // tag处理
-                // console.log(!article_tags == null);
-                // console.log(article_tags !== null);
-                if (article_tags !== null){ // 不为null才加载tag
-                let tag_div = "";
-                for (const tag of article_tags){
-                    console.log(tag);
-                    tag_div += `<div class="article-tag"> ${tag} </div>`;
+                if (article_tags !== null && article_tags.length > 0){ // 增加长度判断
+                    let tag_div = "";
+                    for (const tag of article_tags){
+                        console.log(tag);
+                        tag_div += `<div class="article-tag"> ${tag} </div>`;
+                    }
+                    console.log(tag_div)
+                    document.getElementById('tags').innerHTML = `<div class="blog-tag-container" id="tag-container">${tag_div}</div>`;                    
                 }
-                console.log(tag_div)
-                document.getElementById('tags').innerHTML = `<div class="blog-tag-container" id="tag-container">${tag_div}</div>`;                    
-                }
-                // console.log(article_tags);
-                // 标题处理
-                console.log('./' + article_title + '.md')
+                
+                // 保持原有的逻辑，只修复编码问题
                 if (article_title.includes("#")){
-                    const fileName = article_title + ".md";
+                    const fileName = article_filename + ".md";
                     const encodedFileName = encodeURIComponent(fileName);
                     fetch('./' + encodedFileName)
-                    .then(response => response.text())
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('文件加载失败: ' + response.status);
+                        }
+                        return response.text();
+                    })
                     .then(md => {
                         // 写日期
                         const timecontainer = document.getElementById("time");
@@ -104,10 +107,23 @@
                         timecontainer.innerHTML = htmlContent;
                         // 写内容
                         document.getElementById('content').innerHTML = marked.parse(md);
+                    })
+                    .catch(error => {
+                        console.error("加载文章失败:", error);
+                        document.getElementById('content').innerHTML = `
+                            <h1>加载失败</h1>
+                            <p>文章内容加载失败，请稍后重试。</p>
+                            <p>错误信息: ${error.message}</p>
+                        `;
                     });
                 }else{
-                    fetch('./' + article_title + '.md')
-                        .then(response => response.text())
+                    fetch('./' + article_filename + '.md')
+                        .then(response => {
+                            if (!response.ok) {
+                                throw new Error('文件加载失败: ' + response.status);
+                            }
+                            return response.text();
+                        })
                         .then(md => {
                             // 写日期
                             const timecontainer = document.getElementById("time");
@@ -115,6 +131,14 @@
                             timecontainer.innerHTML = htmlContent;
                             // 写内容
                             document.getElementById('content').innerHTML = marked.parse(md);
+                        })
+                        .catch(error => {
+                            console.error("加载文章失败:", error);
+                            document.getElementById('content').innerHTML = `
+                                <h1>加载失败</h1>
+                                <p>文章内容加载失败，请稍后重试。</p>
+                                <p>错误信息: ${error.message}</p>
+                            `;
                         });                    
                 }
 
@@ -128,6 +152,10 @@
         })
         .catch(error => {
             console.error("加载失败:", error);
+            document.getElementById('content').innerHTML = `
+                <h1>数据加载失败</h1>
+                <p>Oh,Noooooooooooooooooooooooooooo...</p>
+            `;
         });
     </script>
 
