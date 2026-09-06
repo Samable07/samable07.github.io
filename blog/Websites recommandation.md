@@ -3,13 +3,16 @@
 *万一哪天别人能用到呢？或者自己想回来再看看呢？*
 ## 有意思的网站
 - 这是什么声音？ <https://learningmusic.ableton.com/zh-Hans/make-beats/what-are-these-sounds.html>
+- 像素点模拟世界 <https://neal.fun/sandboxels/>
 
 ## 杂项
+- 视频字幕制作 <https://www.subextractor.com/zh/extract>
+> 这网站有免费额度，不用登录，是真好用我说，真的是科技改变生活
 - 文件转换 <https://convertio.co/zh/?iao.su>、<https://svgtopng.com/zh/>
 > 挺万能的而且免费
 - PDF合并 [【链接】](https://www.ilovepdf.com/zh-cn/download/lh394bzqjs8l1rlmmrcAjkb5ydlr03dpp35hhb525l0lygmsh7sxlsr581qznvpztfgp0mym2w0r05c4fpsw5xA13k33rs2ckh03jtklpmxrzfpnAhhzrhwkhvnv5wnf2nd079lgw5gtshxdpyh4lvvzd5bg605nzApvjp509bhwfzh3xh11/10)
 - 2FA验证器 [【链接】](https://microsoftedge.microsoft.com/addons/detail/authenticator-2fa-client/ocglkepbibnalbgmbachknglpdipeoio?refid=bingshortanswersdownload)
-> 这玩意儿可以“绑定”微软账号，**似乎**换设备 Edge 登之前的微软账号也能用
+> 这玩意儿可以**似乎**绑定微软账号，**似乎**换设备 Edge 登之前的微软账号也能用
 - 几何画板 <https://www.geogebra.org/calculator> 及其经典版 <https://www.geogebra.org/classic?lang=zh_CN>
 > 为什么不用 Geogebra 😭
 - 因式分解工具 <https://zh.numberempire.com/factoringcalculator.php>

@@ -101,6 +101,7 @@ function image() {
 }
 marked.use(image());
 
+
 // codebox
 marked.setOptions({ breaks: true, gfm: true }); // 初始化防BUG
 function codeBox() {
